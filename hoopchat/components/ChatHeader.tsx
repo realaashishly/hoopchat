@@ -1,21 +1,7 @@
-"use client";
-
-import { createClient } from "@/lib/supabase/client";
 import { Button } from "./ui/button";
 import React from "react";
 
 export default function ChatHeader() {
-
-  const handleLoginWithGithub = () => {
-    const supabase = createClient();
-    supabase.auth.signInWithOAuth({
-      provider: "github",
-      options: {
-        redirectTo: location.origin + "/auth/callback",
-      },
-    });
-  }; 
-
   return (
     <div className="h-20">
       <div className="p-5 border-b flex justify-between items-center">
@@ -26,9 +12,7 @@ export default function ChatHeader() {
             <h1 className="text-sm text-gray-400">2 onlines</h1>
           </div>
         </div>
-        <Button variant="outline" onClick={handleLoginWithGithub}>
-          Login
-        </Button>
+        <Button variant="outline">Login</Button>
       </div>
     </div>
   );
