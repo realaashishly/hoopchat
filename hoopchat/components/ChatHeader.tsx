@@ -1,19 +1,20 @@
 "use client";
 
-import { supabaseBrowser } from "@/lib/supabase/browser";
+import { createClient } from "@/lib/supabase/client";
 import { Button } from "./ui/button";
 import React from "react";
 
 export default function ChatHeader() {
+
   const handleLoginWithGithub = () => {
-    const supabase = supabaseBrowser();
+    const supabase = createClient();
     supabase.auth.signInWithOAuth({
       provider: "github",
       options: {
         redirectTo: location.origin + "/auth/callback",
       },
     });
-  };
+  }; 
 
   return (
     <div className="h-20">
