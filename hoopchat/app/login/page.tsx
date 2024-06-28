@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { emailLogin, signup } from "./actions";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-// import { OAuthButtons } from "./oauth-signin";
+import { OAuthButtons } from "./oauth-signin";
 
 export default async function Login({
   searchParams,
@@ -70,7 +70,7 @@ export default async function Login({
               Login
             </Button>
           </form>
-          {/* <OAuthButtons /> */}
+          <OAuthButtons />
           <div className="text-center text-sm">
             Don&apos;t have an account?{" "}
             <button formAction={signup} form="login-form" className="underline">
